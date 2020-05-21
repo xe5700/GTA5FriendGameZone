@@ -5,4 +5,4 @@ if(-not (Test-Path -Path "config.json")){
 }else{
     $config = Get-Content "config.json" -Raw | ConvertFrom-Json 
 }
-Disable-NetFirewallRule -Name $config.Rulename
+Set-NetFirewallRule -Name $config.Rulename -RemoteAddress Any
